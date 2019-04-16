@@ -1,4 +1,4 @@
-import user from './user'
+import User from './user'
 
-export default new user();
-export {user}
+export default new User();
+export {User}

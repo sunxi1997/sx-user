@@ -1,6 +1,6 @@
 import Event from "sx-event";
 
-export default class user {
+export default class User {
    constructor() {
       this.event = new Event()
       this._userInfo = null
