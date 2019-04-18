@@ -9,12 +9,13 @@ export default class User {
    getUserInfo(sync = false) {
       return sync ? this._userInfo :
          new Promise((resolve) => {
+            let event = this.event;
             this._userInfo ?
                resolve(this._userInfo) :
-               this.event.$on('setUserInfo', onInit)
+               event.$on('setUserInfo', onInit)
             function onInit(userInfo) {
                event.$off('setUserInfo', onInit)
-               onInit = null;
+               onInit = event = null;
                resolve(userInfo);
             }
          })
